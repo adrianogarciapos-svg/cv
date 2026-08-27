@@ -1,6 +1,6 @@
 // ===== Dados do Currículo — Adriano Garcia do Nascimento =====
 const cvData = {
-  nome: "Adriano Garcia do Nascimento",
+  nome: "HADRIUS Garcia do Nascimento",
   titulo: "Especialista em Infraestrutura de TI",
   localizacao: "São Paulo, SP",
   resumo: "Profissional com mais de 16 anos de experiência em infraestrutura de TI, reestruturação de datacenters, redes, servidores e telefonia. Líder de projetos de infraestrutura com atuação em metodologias ágeis e gestão de equipes. Portador de visão monocular, sem necessidade de adaptação no ambiente de trabalho.",
