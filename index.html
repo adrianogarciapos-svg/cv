@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adriano Garcia do Nascimento — Currículo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <div class="page" id="inicio">
+
+    <!-- Hero -->
+    <header class="hero glass-card">
+      <div class="hero-photo">
+        <img src="foto.jpg" alt="Adriano Garcia do Nascimento">
+        <span class="badge badge--status"><i class="fas fa-circle"></i> Disponível</span>
+      </div>
+      <div class="hero-content">
+        <p class="label-md hero-eyebrow">// currículo profissional</p>
+        <h1 class="display-lg" id="profileName"></h1>
+        <p class="headline-md hero-title" id="profileHeadline"></p>
+        <p class="label-sm hero-location" id="profileLocation"></p>
+        <div class="hero-actions" id="heroActions"></div>
+      </div>
+    </header>
+
+    <!-- Grid 2/3 + 1/3 -->
+    <div class="layout-grid">
+
+      <main class="layout-main">
+
+        <section class="glass-card section" id="sobre">
+          <h2 class="headline-md section-title">Perfil</h2>
+          <p class="body-md profile-text" id="aboutText"></p>
+        </section>
+
+        <section class="glass-card section" id="experiencia">
+          <h2 class="headline-md section-title">Experiência</h2>
+          <div class="timeline" id="experienciaList"></div>
+        </section>
+
+        <section class="glass-card section" id="formacao">
+          <h2 class="headline-md section-title">Formação</h2>
+          <div id="formacaoList"></div>
+        </section>
+
+        <section class="glass-card section" id="projetos">
+          <h2 class="headline-md section-title">Cases e Projetos</h2>
+          <div class="projects-grid" id="projetosList"></div>
+        </section>
+
+      </main>
+
+      <aside class="layout-sidebar">
+
+        <section class="glass-card section" id="contato">
+          <h2 class="headline-md section-title">Contato</h2>
+          <ul class="contact-list" id="contatoList"></ul>
+        </section>
+
+        <section class="glass-card section">
+          <h2 class="headline-md section-title">Idiomas</h2>
+          <div id="idiomasList"></div>
+        </section>
+
+        <section class="glass-card section">
+          <h2 class="headline-md section-title">Habilidades</h2>
+          <div class="badge-group" id="skillsList"></div>
+        </section>
+
+        <section class="glass-card section">
+          <h2 class="headline-md section-title">Ferramentas</h2>
+          <div class="badge-group" id="toolsList"></div>
+        </section>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p class="label-sm">&copy; <span id="currentYear"></span> <span id="footerName"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

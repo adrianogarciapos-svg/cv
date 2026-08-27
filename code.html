@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alex Chen | Cloud Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#004395",
+                      "inverse-surface": "#e0e3e5",
+                      "error": "#ffb4ab",
+                      "background": "#101415",
+                      "tertiary": "#b9c8de",
+                      "on-tertiary-fixed": "#0d1c2d",
+                      "error-container": "#93000a",
+                      "primary-fixed-dim": "#adc6ff",
+                      "tertiary-container": "#8392a6",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "on-primary-fixed": "#001a42",
+                      "tertiary-fixed": "#d4e4fa",
+                      "on-background": "#e0e3e5",
+                      "on-surface": "#e0e3e5",
+                      "surface-bright": "#363a3b",
+                      "outline": "#8c909f",
+                      "secondary-fixed": "#dae2fd",
+                      "surface-container-lowest": "#0b0f10",
+                      "on-primary": "#002e6a",
+                      "primary": "#adc6ff",
+                      "outline-variant": "#424754",
+                      "surface-container-high": "#272a2c",
+                      "primary-fixed": "#d8e2ff",
+                      "inverse-primary": "#005ac2",
+                      "on-tertiary-container": "#1c2b3c",
+                      "on-secondary-container": "#adb4ce",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "on-error": "#690005",
+                      "primary-container": "#4d8eff",
+                      "surface-tint": "#adc6ff",
+                      "tertiary-fixed-dim": "#b9c8de",
+                      "surface-dim": "#101415",
+                      "secondary": "#bec6e0",
+                      "on-primary-container": "#00285d",
+                      "secondary-container": "#3f465c",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed": "#131b2e",
+                      "surface-container-highest": "#323537",
+                      "on-tertiary": "#233143",
+                      "on-secondary": "#283044",
+                      "inverse-on-surface": "#2d3133",
+                      "surface-container-low": "#191c1e",
+                      "surface": "#101415",
+                      "surface-container": "#1d2022",
+                      "on-tertiary-fixed-variant": "#39485a",
+                      "on-surface-variant": "#c2c6d6",
+                      "surface-variant": "#323537"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "16px",
+                      "xs": "8px",
+                      "margin": "32px",
+                      "base": "4px",
+                      "md": "24px",
+                      "gutter": "24px",
+                      "lg": "40px",
+                      "xl": "64px"
+              },
+              "fontFamily": {
+                      "label-md": ["JetBrains Mono"],
+                      "headline-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "label-sm": ["JetBrains Mono"],
+                      "headline-lg-mobile": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "label-sm": ["12px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Glassmorphism custom utilities for precise linear gradient borders */
+        .glass-panel {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05); /* Base Card Level opacity */
+            backdrop-filter: blur(12px);
+            border-radius: 0.75rem; /* xl */
+            z-index: 1;
+        }
+        .glass-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px; /* border width */
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .glass-ambient-glow {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        
+        /* Button Glow Hover */
+        .btn-primary:hover {
+            box-shadow: 0 0 10px rgba(173, 198, 255, 0.6); /* Primary color glow */
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col selection:bg-primary/30 selection:text-primary pb-20 md:pb-0">
+<!-- TopAppBar (Visible on Desktop/Tablet, Simplified on Mobile) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/30 flex justify-between items-center px-sm h-16 w-full">
+<div class="flex items-center gap-xs">
+<img class="w-8 h-8 rounded-full object-cover border border-primary/30 hidden md:block" data-alt="A professional, high-end corporate headshot of a modern Asian male cloud architect. The lighting is cinematic and moody, with subtle electric blue rim lighting against a deep slate dark background. The aesthetic is cyber-professional, confident, and clean, fitting a premium tech resume." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo1HrFZroff3pJKMbiyFw7c6ZiTPZsuFo3CSdE2mGQErzCFqCBu4u6UDJ2hQoyn8_FGF6EerJZuOpXzJY35SJbOOyzaWeacfHSALCSKCr95qJE9xGbUibq1cf4UGG1KwO2W-xMzm0_cVMT2jj0HkcGEO1peM_Sd3Bp6xQLfttRBIXoiLLV_z7lxsHMu9l-1hQKdcIHR-alJZ3FlAxYD_TKb3wUR-8Xm-87Sz7ybnBiMmd1KApcSP9_"/>
+<span class="text-headline-lg-mobile font-headline-lg-mobile md:text-headline-md md:font-headline-md text-primary tracking-tight">Alex Chen | Cloud Architect</span>
+</div>
+<!-- Web Navigation Cluster (Responsive Pivot) -->
+<nav class="hidden md:flex items-center gap-md">
+<a class="text-primary text-label-md font-label-md hover:glow-primary transition-all underline underline-offset-4 decoration-2" href="#bio">Bio</a>
+<a class="text-on-surface-variant text-label-md font-label-md hover:text-primary transition-all" href="#experience">Work</a>
+<a class="text-on-surface-variant text-label-md font-label-md hover:text-primary transition-all" href="#skills">Skills</a>
+</nav>
+<button class="bg-primary text-on-primary px-4 py-1.5 rounded-full text-label-md font-label-md btn-primary transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+            Hire Me
+        </button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow pt-24 px-4 md:px-margin max-w-[1200px] w-full mx-auto grid grid-cols-1 md:grid-cols-12 gap-lg relative z-10">
+<!-- Sidebar (1/3 Width on Desktop): Hero, Bio, Skills -->
+<aside class="md:col-span-4 flex flex-col gap-lg">
+<!-- Hero / Profile Card -->
+<div class="glass-panel glass-ambient-glow p-md flex flex-col items-center text-center">
+<div class="relative mb-4">
+<img class="w-32 h-32 rounded-full object-cover border-2 border-surface bg-surface-container shadow-[0_0_20px_rgba(173,198,255,0.2)]" data-alt="A striking portrait of a futuristic cloud architect working in a high-tech server room. The environment features dark obsidian surfaces illuminated by neon blue and teal LED data streams. The subject exudes technical mastery and focus, capturing a modern cyberpunk corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBML948-7ZilUU4Jsku1vfutAjFL26L4V3H0fsWgUF3FwLFm1eY64cDauP3eLrcHkjO9cKyXZfSWUl6Z1lpp8byfo9mX1xc7nrD57Z8Z6VEr_pT9EiSKDH6Hr7ePnneGi97LdKqRLl3GlCEghR1XjbFFES4tnL8GGzuJOOzwZSdS-XxcBnWUxrpe5fPK4ByYE_4ejAGxOOEUKs9mD-46T1lBDpsnN4KzCbDsbWYAiVrYcz73aLYSJCA"/>
+<div class="absolute bottom-1 right-1 w-4 h-4 bg-primary rounded-full border-2 border-surface animate-pulse"></div>
+</div>
+<h1 class="text-headline-md font-headline-md text-on-surface mb-1">Alex Chen</h1>
+<p class="text-label-md font-label-md text-primary mb-4 uppercase tracking-widest">Cloud Architect</p>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6 text-sm">
+                    Specializing in scalable cloud infrastructure and devops automation. Bridging the gap between code and bare metal.
+                </p>
+<div class="w-full flex justify-center gap-4 border-t border-white/5 pt-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">link</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">terminal</span>
+</a>
+</div>
+</div>
+<!-- Skills Section -->
+<div class="glass-panel p-md flex flex-col gap-sm">
+<h2 class="text-headline-md font-headline-md text-on-surface border-b border-white/5 pb-2 mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">terminal</span>
+                    Core Stack
+                </h2>
+<div class="flex flex-col gap-3">
+<div class="flex items-start flex-col gap-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">cloud</span> Cloud
+                        </span>
+<div class="flex flex-wrap gap-xs">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-label-md font-label-md border border-primary/20 hover:bg-primary/20 cursor-default transition-colors">AWS</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-label-md font-label-md border border-primary/20 hover:bg-primary/20 cursor-default transition-colors">GCP</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-label-md font-label-md border border-primary/20 hover:bg-primary/20 cursor-default transition-colors">Kubernetes</span>
+</div>
+</div>
+<div class="flex items-start flex-col gap-2 mt-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">dns</span> Backend
+                        </span>
+<div class="flex flex-wrap gap-xs">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-label-md font-label-md border border-primary/20 hover:bg-primary/20 cursor-default transition-colors">Node.js</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-label-md font-label-md border border-primary/20 hover:bg-primary/20 cursor-default transition-colors">Python</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-label-md font-label-md border border-primary/20 hover:bg-primary/20 cursor-default transition-colors">Go</span>
+</div>
+</div>
+<div class="flex items-start flex-col gap-2 mt-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">code</span> Frontend
+                        </span>
+<div class="flex flex-wrap gap-xs">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-label-md font-label-md border border-primary/20 hover:bg-primary/20 cursor-default transition-colors">React</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-label-md font-label-md border border-primary/20 hover:bg-primary/20 cursor-default transition-colors">Tailwind</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content (2/3 Width on Desktop): Experience & Education -->
+<section class="md:col-span-8 flex flex-col gap-lg">
+<!-- Experience Timeline -->
+<div>
+<h2 class="text-display-lg font-display-lg text-on-surface mb-md flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[40px]">work</span>
+                    Experience
+                </h2>
+<div class="relative pl-6 border-l-2 border-outline/20 flex flex-col gap-md">
+<!-- Timeline Node 1 -->
+<div class="relative">
+<!-- Node Dot -->
+<div class="absolute -left-[31px] top-4 w-3 h-3 bg-primary rounded-full shadow-[0_0_8px_4px_rgba(173,198,255,0.3)]"></div>
+<div class="glass-panel p-md transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(173,198,255,0.1)]">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">Lead Cloud Architect</h3>
+<p class="text-primary text-label-md font-label-md mt-1">Global Tech Solutions</p>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant mt-2 md:mt-0 bg-white/5 px-2 py-1 rounded-md">2021 — Present</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-4">
+                                Spearheaded the migration of legacy monolithic applications to a microservices architecture on AWS. Implemented GitOps workflows utilizing Kubernetes and ArgoCD, reducing deployment times by 40% and increasing system reliability across 5 global regions.
+                            </p>
+</div>
+</div>
+<!-- Timeline Node 2 -->
+<div class="relative">
+<!-- Node Dot -->
+<div class="absolute -left-[31px] top-4 w-3 h-3 bg-outline rounded-full"></div>
+<div class="glass-panel p-md transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(173,198,255,0.1)] opacity-80 hover:opacity-100">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">DevOps Engineer</h3>
+<p class="text-primary text-label-md font-label-md mt-1">CloudScale Inc.</p>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant mt-2 md:mt-0 bg-white/5 px-2 py-1 rounded-md">2018 — 2021</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-4">
+                                Managed CI/CD pipelines using Jenkins and GitLab CI. Automated infrastructure provisioning with Terraform, standardizing environments from development to production. Reduced infrastructure costs by 15% through optimized resource allocation and auto-scaling policies.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Education -->
+<div class="mt-4">
+<h2 class="text-display-lg font-display-lg text-on-surface mb-md flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[40px]">school</span>
+                    Education
+                </h2>
+<div class="glass-panel p-md flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-[28px]">account_balance</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">MS in Computer Science</h3>
+<p class="text-label-md font-label-md text-primary mt-1">University of Technology</p>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+                            Focus on Distributed Systems and Cloud Computing. Thesis on dynamic load balancing algorithms in containerized environments.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component (From JSON) -->
+<footer class="bg-surface-container-lowest w-full py-xl bg-gradient-to-t from-black/20 to-transparent flex flex-col items-center gap-sm px-margin mt-xl">
+<div class="flex gap-4 mb-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 text-label-sm font-label-sm" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 text-label-sm font-label-sm" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 text-label-sm font-label-sm" href="#">Portfolio</a>
+</div>
+<p class="font-label-md text-on-surface text-center opacity-50">© 2024 Built with Precision</p>
+</footer>
+<!-- BottomNavBar Component (Mobile Only) (From JSON) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-sm pb-4 pt-2 bg-surface-container/90 dark:bg-surface-container/90 backdrop-blur-md rounded-t-xl border-t border-white/5 shadow-[0_-10px_40px_rgba(0,0,0,0.4)] z-50 md:hidden">
+<!-- Active Tab (Bio as it's the top of page) -->
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-xl p-xs tap-highlight-none active:scale-90 transition-transform" href="#bio">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-sm font-label-sm mt-1">Bio</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:text-primary tap-highlight-none active:scale-90 transition-transform" href="#experience">
+<span class="material-symbols-outlined">history</span>
+<span class="text-label-sm font-label-sm mt-1">Work</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:text-primary tap-highlight-none active:scale-90 transition-transform" href="#skills">
+<span class="material-symbols-outlined">terminal</span>
+<span class="text-label-sm font-label-sm mt-1">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:text-primary tap-highlight-none active:scale-90 transition-transform" href="#stack">
+<span class="material-symbols-outlined">layers</span>
+<span class="text-label-sm font-label-sm mt-1">Stack</span>
+</a>
+</nav>
+</body></html>
