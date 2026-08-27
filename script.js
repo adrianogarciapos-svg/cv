@@ -3,7 +3,14 @@ const cvData = {
   nome: "HADRIUS Garcia do Nascimento",
   titulo: "Especialista em Infraestrutura de TI",
   localizacao: "São Paulo, SP",
+  tagline: "Liderança de projetos de infraestrutura, datacenters e redes com mais de 16 anos de experiência em ambientes corporativos de alta complexidade.",
   resumo: "Profissional com mais de 16 anos de experiência em infraestrutura de TI, reestruturação de datacenters, redes, servidores e telefonia. Líder de projetos de infraestrutura com atuação em metodologias ágeis e gestão de equipes. Portador de visão monocular, sem necessidade de adaptação no ambiente de trabalho.",
+  stats: [
+    { valor: "16+", label: "Anos de experiência" },
+    { valor: "5", label: "Cases entregues" },
+    { valor: "10+", label: "Competências" },
+    { valor: "ITIL", label: "Certificação V3" },
+  ],
   social: [
     { icon: "fab fa-linkedin-in", url: "https://linkedin.com", label: "LinkedIn" },
   ],
@@ -102,12 +109,17 @@ function renderProfile() {
   document.getElementById("profileHeadline").textContent = cvData.titulo;
   document.getElementById("profileLocation").innerHTML =
     `<i class="fas fa-map-marker-alt"></i> ${cvData.localizacao}`;
+  document.getElementById("heroTagline").textContent = cvData.tagline;
   document.getElementById("aboutText").textContent = cvData.resumo;
   document.getElementById("footerName").textContent = cvData.nome;
+  document.getElementById("navName").textContent = cvData.nome.split(" ")[0];
 
   document.getElementById("heroActions").innerHTML = `
-    <a href="mailto:adriano.nascimento@gmail.com" class="btn btn-primary">
-      <i class="fas fa-envelope"></i> Contato
+    <a href="#contato" class="btn btn-primary">
+      <i class="fas fa-paper-plane"></i> Fale comigo
+    </a>
+    <a href="#experiencia" class="btn btn-ghost">
+      <i class="fas fa-briefcase"></i> Experiência
     </a>
     ${cvData.social.map((s) =>
       `<a href="${s.url}" target="_blank" rel="noopener" class="btn btn-ghost">
@@ -115,6 +127,16 @@ function renderProfile() {
       </a>`
     ).join("")}
   `;
+}
+
+function renderStats() {
+  document.getElementById("statsBar").innerHTML = cvData.stats
+    .map((s) => `
+    <div class="stat-card">
+      <div class="stat-card__value">${s.valor}</div>
+      <div class="stat-card__label">${s.label}</div>
+    </div>`)
+    .join("");
 }
 
 function renderContato() {
@@ -199,8 +221,60 @@ function renderProjetos() {
     .join("");
 }
 
+// ===== Navegação & interatividade =====
+function initNavbar() {
+  const navbar = document.getElementById("navbar");
+  const toggle = document.getElementById("navToggle");
+  const mobile = document.getElementById("navMobile");
+
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("navbar--scrolled", window.scrollY > 40);
+  });
+
+  toggle.addEventListener("click", () => {
+    const open = mobile.classList.toggle("navbar__mobile--open");
+    toggle.setAttribute("aria-expanded", open);
+    toggle.innerHTML = open
+      ? '<i class="fas fa-times"></i>'
+      : '<i class="fas fa-bars"></i>';
+  });
+
+  mobile.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobile.classList.remove("navbar__mobile--open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+  });
+}
+
+function initScrollSpy() {
+  const sections = document.querySelectorAll("section[id], .hero-landing[id]");
+  const navLinks = document.querySelectorAll(".nav-link, .bottom-nav__item");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+
+        navLinks.forEach((link) => {
+          const href = link.getAttribute("href");
+          const isActive = href === `#${id}`;
+          link.classList.toggle("nav-link--active", isActive && link.classList.contains("nav-link"));
+          link.classList.toggle("bottom-nav__item--active", isActive && link.classList.contains("bottom-nav__item"));
+        });
+      });
+    },
+    { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderProfile();
+  renderStats();
   renderContato();
   renderIdiomas();
   renderSkills();
@@ -208,5 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderExperiencia();
   renderFormacao();
   renderProjetos();
+  initNavbar();
+  initScrollSpy();
   document.getElementById("currentYear").textContent = new Date().getFullYear();
 });
