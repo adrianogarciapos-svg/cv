@@ -1,35 +1,175 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Currículo profissional de Marina Costa Almeida, desenvolvedora full stack." />
-    <title>Marinaa Costa Almeida — Currículo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Outfit:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <div class="page-tools" role="toolbar" aria-label="Ações do currículo">
-      <button type="button" id="theme-toggle" class="tool-btn">Tema</button>
-      <button type="button" id="print-btn" class="tool-btn">
-        <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V4h10v4"/><rect x="6" y="14" width="12" height="6"/><path d="M6 17H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/></svg></span>
-        <span>Imprimir / PDF</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adriano Garcia do Nascimento — Currículo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Ambient background -->
+  <div class="bg-effects" aria-hidden="true">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#inicio" class="navbar__brand">
+        <img src="foto.jpg" alt="" class="navbar__avatar">
+        <span class="navbar__name" id="navName"></span>
+      </a>
+      <nav class="navbar__links" aria-label="Navegação principal">
+        <a href="#sobre" class="nav-link">Perfil</a>
+        <a href="#experiencia" class="nav-link">Experiência</a>
+        <a href="#habilidades" class="nav-link">Habilidades</a>
+        <a href="#projetos" class="nav-link">Projetos</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+      <a href="mailto:adriano.nascimento@gmail.com" class="btn btn-primary btn--sm navbar__cta">
+        <i class="fas fa-envelope"></i> Contato
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
       </button>
     </div>
+    <nav class="navbar__mobile" id="navMobile" aria-label="Menu mobile">
+      <a href="#sobre" class="nav-link">Perfil</a>
+      <a href="#experiencia" class="nav-link">Experiência</a>
+      <a href="#habilidades" class="nav-link">Habilidades</a>
+      <a href="#projetos" class="nav-link">Projetos</a>
+      <a href="#contato" class="nav-link">Contato</a>
+    </nav>
+  </header>
 
-    <main id="cv" class="cv" aria-label="Currículo"></main>
+  <!-- Hero -->
+  <section class="hero-landing" id="inicio">
+    <div class="hero-landing__inner">
+      <div class="hero-landing__photo">
+        <img src="foto.jpg" alt="Adriano Garcia do Nascimento">
+        <span class="badge badge--status"><i class="fas fa-circle"></i> Disponível</span>
+      </div>
+      <div class="hero-landing__content">
+        <p class="label-md hero-eyebrow">// currículo profissional</p>
+        <h1 class="display-lg" id="profileName"></h1>
+        <p class="headline-md hero-title" id="profileHeadline"></p>
+        <p class="label-sm hero-location" id="profileLocation"></p>
+        <p class="body-lg hero-tagline" id="heroTagline"></p>
+        <div class="hero-actions" id="heroActions"></div>
+      </div>
+    </div>
+    <a href="#sobre" class="hero-scroll" aria-label="Rolar para o conteúdo">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
 
-    <noscript>
-      <p class="noscript">Ative o JavaScript para visualizar o currículo completo.</p>
-    </noscript>
+  <!-- Stats -->
+  <section class="stats-bar" aria-label="Destaques">
+    <div class="stats-bar__inner" id="statsBar"></div>
+  </section>
 
-    <script src="assets/js/data.js"></script>
-    <script src="assets/js/icons.js"></script>
-    <script src="assets/js/app.js"></script>
-  </body>
+  <main class="page">
+
+    <section class="section-block" id="sobre">
+      <div class="section-header">
+        <p class="label-md section-eyebrow">// sobre</p>
+        <h2 class="headline-lg section-title">Perfil Profissional</h2>
+      </div>
+      <div class="glass-card section">
+        <p class="body-lg profile-text" id="aboutText"></p>
+      </div>
+    </section>
+
+    <section class="section-block" id="experiencia">
+      <div class="section-header">
+        <p class="label-md section-eyebrow">// trajetória</p>
+        <h2 class="headline-lg section-title">Experiência</h2>
+      </div>
+      <div class="timeline" id="experienciaList"></div>
+    </section>
+
+    <section class="section-block" id="habilidades">
+      <div class="section-header">
+        <p class="label-md section-eyebrow">// competências</p>
+        <h2 class="headline-lg section-title">Habilidades & Ferramentas</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="glass-card section">
+          <h3 class="headline-md card-subtitle"><i class="fas fa-server"></i> Habilidades</h3>
+          <div class="badge-group" id="skillsList"></div>
+        </div>
+        <div class="glass-card section">
+          <h3 class="headline-md card-subtitle"><i class="fas fa-toolbox"></i> Ferramentas</h3>
+          <div class="badge-group" id="toolsList"></div>
+        </div>
+        <div class="glass-card section">
+          <h3 class="headline-md card-subtitle"><i class="fas fa-language"></i> Idiomas</h3>
+          <div id="idiomasList"></div>
+        </div>
+        <div class="glass-card section">
+          <h3 class="headline-md card-subtitle"><i class="fas fa-graduation-cap"></i> Formação</h3>
+          <div id="formacaoList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="projetos">
+      <div class="section-header">
+        <p class="label-md section-eyebrow">// portfólio</p>
+        <h2 class="headline-lg section-title">Cases e Projetos</h2>
+      </div>
+      <div class="projects-grid" id="projetosList"></div>
+    </section>
+
+    <section class="section-block cta-section" id="contato">
+      <div class="glass-card cta-card">
+        <div class="cta-card__content">
+          <p class="label-md section-eyebrow">// vamos conversar</p>
+          <h2 class="headline-lg">Vamos construir o próximo capítulo</h2>
+          <p class="body-md">Aberto a conversas sobre infraestrutura híbrida, cloud, liderança técnica e transformação de plataformas.</p>
+        </div>
+        <ul class="contact-list" id="contatoList"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="label-sm">&copy; <span id="currentYear"></span> <span id="footerName"></span></p>
+  </footer>
+
+  <!-- Mobile bottom nav -->
+  <nav class="bottom-nav" aria-label="Navegação mobile">
+    <a href="#inicio" class="bottom-nav__item" data-section="inicio">
+      <i class="fas fa-home"></i>
+      <span>Início</span>
+    </a>
+    <a href="#experiencia" class="bottom-nav__item" data-section="experiencia">
+      <i class="fas fa-briefcase"></i>
+      <span>Exp.</span>
+    </a>
+    <a href="#habilidades" class="bottom-nav__item" data-section="habilidades">
+      <i class="fas fa-code"></i>
+      <span>Skills</span>
+    </a>
+    <a href="#projetos" class="bottom-nav__item" data-section="projetos">
+      <i class="fas fa-folder-open"></i>
+      <span>Cases</span>
+    </a>
+    <a href="#contato" class="bottom-nav__item" data-section="contato">
+      <i class="fas fa-envelope"></i>
+      <span>Contato</span>
+    </a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
 </html>
