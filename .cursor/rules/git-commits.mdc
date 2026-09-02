@@ -1,0 +1,39 @@
+---
+description: Padrão obrigatório de commits Conventional Commits em português
+alwaysApply: true
+---
+
+# Padrão de Commits
+
+Sempre que criar commits neste projeto, use **Conventional Commits**:
+
+```
+tipo: descrição curta em português
+```
+
+## Tipos permitidos
+
+| Tipo | Uso |
+|------|-----|
+| `feat` | Nova funcionalidade |
+| `fix` | Correção de bug |
+| `docs` | Documentação |
+| `style` | Visual/formatação (sem mudança de lógica) |
+| `refactor` | Refatoração |
+| `test` | Testes |
+| `chore` | Manutenção/config |
+| `perf` | Performance |
+| `build` | Build/dependências |
+| `ci` | CI/CD |
+
+## Exemplos do repositório
+
+- `feat: transformar currículo em landing page moderna`
+- `fix: alteração da descrição de formação`
+
+## Regras
+
+- A descrição deve ter pelo menos 3 caracteres após `tipo: `
+- Escopo opcional: `feat(ui): adicionar botão de contato`
+- O hook `commit-msg` **rejeita** mensagens fora do padrão
+- Nunca use `--no-verify` para contornar o hook, salvo se o usuário pedir explicitamente

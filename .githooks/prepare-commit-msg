@@ -1,0 +1,32 @@
+#!/bin/sh
+# Insere template quando o commit abre o editor
+
+commit_msg_file=$1
+commit_source=$2
+
+case "$commit_source" in
+  message|merge|squash|commit|template)
+    exit 0
+    ;;
+esac
+
+cat >> "$commit_msg_file" << 'EOF'
+
+# Padrao de commit (obrigatorio):
+# tipo: descricao curta em portugues
+#
+# Tipos:
+#   feat     -> nova funcionalidade
+#   fix      -> correcao de bug
+#   docs     -> documentacao
+#   style    -> visual/formatacao
+#   refactor -> refatoracao
+#   test     -> testes
+#   chore    -> manutencao
+#
+# Exemplos:
+#   feat: adicionar timeline de experiencia
+#   fix: corrigir layout mobile da sidebar
+EOF
+
+exit 0
