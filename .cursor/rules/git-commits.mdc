@@ -1,39 +1,44 @@
 ---
-description: Padrão obrigatório de commits Conventional Commits em português
+description: Commits Conventional Commits em português, criados ao concluir cada alteração
 alwaysApply: true
 ---
 
-# Padrão de Commits
+# Commits automáticos
 
-Sempre que criar commits neste projeto, use **Conventional Commits**:
+Ao concluir um conjunto de alterações neste repositório, **crie o commit na hora**, mesmo que o usuário esqueça de pedir. Inferir o tipo e a descrição pelo diff — não perguntar o que mudou.
+
+Não faça commit vazio, não inclua segredos (`.env`, tokens) e não faça push a menos que o usuário peça.
+
+## Formato
 
 ```
 tipo: descrição curta em português
 ```
 
-## Tipos permitidos
+A descrição diz o **que mudou** (alterou X, incluiu Y, corrigiu Z). Mínimo de 3 caracteres após `tipo: `. Escopo opcional: `feat(ui): ...`
 
-| Tipo | Uso |
-|------|-----|
-| `feat` | Nova funcionalidade |
-| `fix` | Correção de bug |
+O hook `commit-msg` rejeita mensagens fora do padrão. Nunca use `--no-verify`, salvo pedido explícito.
+
+## Tipos
+
+| Tipo | Quando usar |
+|------|-------------|
+| `feat` | Nova funcionalidade ou seção |
+| `fix` | Correção de bug ou conteúdo errado |
+| `style` | Visual, layout, tema, tipografia |
+| `refactor` | Reorganização sem mudar o comportamento |
 | `docs` | Documentação |
-| `style` | Visual/formatação (sem mudança de lógica) |
-| `refactor` | Refatoração |
-| `test` | Testes |
-| `chore` | Manutenção/config |
+| `chore` | Config, regras, manutenção |
 | `perf` | Performance |
+| `test` | Testes |
 | `build` | Build/dependências |
 | `ci` | CI/CD |
 
-## Exemplos do repositório
+Se o diff misturar tipos, escolha o **predomina** (ex.: layout + ícones → `style`). Separe em dois commits só se forem assuntos claramente distintos.
 
-- `feat: transformar currículo em landing page moderna`
-- `fix: alteração da descrição de formação`
+## Exemplos
 
-## Regras
-
-- A descrição deve ter pelo menos 3 caracteres após `tipo: `
-- Escopo opcional: `feat(ui): adicionar botão de contato`
-- O hook `commit-msg` **rejeita** mensagens fora do padrão
-- Nunca use `--no-verify` para contornar o hook, salvo se o usuário pedir explicitamente
+- `style: redesenhar o currículo em layout executivo`
+- `feat: incluir ícones nas seções e no contato`
+- `fix: corrigir o nome HADRIUS para Adriano`
+- `chore: sincronizar histórico local com origin/main`
